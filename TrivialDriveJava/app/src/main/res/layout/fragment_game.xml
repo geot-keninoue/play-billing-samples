@@ -17,17 +17,17 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.sample.android.trivialdrivesample.ui.GameFragment">
+    tools:context="com.keninoue.trivialdrivesample.ui.GameFragment">
     <data>
         <variable
             name="gvm"
-            type="com.sample.android.trivialdrivesample.GameViewModel"/>
+            type="com.keninoue.trivialdrivesample.GameViewModel"/>
         <variable
             name="gasTankImages"
             type="android.content.res.TypedArray"/>
         <variable
             name="gameFragment"
-            type="com.sample.android.trivialdrivesample.ui.GameFragment"/>
+            type="com.keninoue.trivialdrivesample.ui.GameFragment"/>
     </data>
 
     <ScrollView
@@ -104,6 +104,18 @@
                 app:layout_constraintStart_toEndOf="@+id/drive_button"
                 app:layout_constraintTop_toTopOf="@+id/drive_button" />
 
+            <Button
+                android:id="@+id/post_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="120dp"
+                android:minHeight="48dp"
+                android:onClick="@{()->gameFragment.postTest()}"
+                android:text="Post"
+                app:layout_constraintEnd_toEndOf="@+id/buy_button"
+                app:layout_constraintStart_toStartOf="@+id/drive_button"
+                app:layout_constraintTop_toBottomOf="@+id/buy_button" />
+
             <TextView
                 android:id="@+id/title_view"
                 android:layout_width="wrap_content"
@@ -119,6 +131,25 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_chainStyle="packed" />
+
+            //追加分
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="0dp">
+
+
+                <Button
+                    android:id="@+id/policy_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="@{()->gameFragment.showPrivacyPolicy()}"
+                    android:text="Privacy Policy" />
+            </RelativeLayout>
+            //追加分
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
